@@ -1,0 +1,232 @@
+/* Start Global rules */
+
+:root {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "cairo", sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*medium*/
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*large*/
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Start Global rules */
+
+/* start head */
+
+.head {
+    background-image: url("../images/simon-daniel-fy6Gr1goL60-unsplash.jpg");
+    background-size: cover;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+header .logo {
+    text-transform: capitalize;
+    font-family: "Rubik Wet Paint";
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.3s;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: black;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    width: 0px;
+    transform: translate(-50%, -50%);
+    bottom: -10px;
+    left: 50%;
+    transition: 0.2s;
+}
+
+nav ul li:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+}
+
+nav .links a:first-child {
+    color: black;
+    font-weight: bold;
+}
+
+nav .links a:last-child {
+    color: white;
+    background-color: black;
+    padding: 7px 20px;
+    border-radius: 7px;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav .links a:last-child:hover {
+    background-color: rgb(65, 65, 65);
+}
+
+.burger {
+    height: fit-content;
+    transition: 0.25s;
+    display: none;
+}
+
+.burger span {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    display: block;
+    transition: inherit;
+}
+
+.burger span:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.burger.clicked span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.clicked span:nth-child(1) {
+    transform: rotate(-45deg) translate(-3px, 7px);
+}
+
+.burger.clicked span:nth-child(3) {
+    transform: rotate(45deg) translate(-3px, -7px);
+}
+
+@media (max-width: 640px) {
+    .burger {
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+    }
+    nav {
+        display: none;
+    }
+    header {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+header .nav-clicked {
+    display: block;
+    position: absolute;
+    top: 90px;
+    width: 75vw;
+    right: 20px;
+    transition: 0.3s;
+
+    background-color: rgba(0, 0, 0, 0.568);
+}
+
+header .nav-clicked a {
+    color: white;
+}
+
+header .nav-clicked .links a {
+    color: white;
+}
+
+header .nav-clicked::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -30px;
+    right: 6px;
+    border: 15px solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.568) transparent;
+}
+
+header .nav-clicked ul {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+}
+
+header .nav-clicked ul li::before {
+    background-color: white;
+    height: 2px;
+}
+
+header .nav-clicked .links {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* end head */
